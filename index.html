@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scatter Smart Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Scatter Smart Calculator</h1>
+    <button id="theme-toggle" title="Toggle Theme">
+      🌙
+    </button>
+    <button id="fullscreen-toggle" title="Fullscreen Mode">⛶</button>
+  </header>
+
+  <div class="time" id="timeDisplay">Loading time...</div>
+
+  <main>
+    <!-- Calculator Section -->
+    <section id="calculator-section">
+      <input type="text" id="expression" placeholder="Type or paste your math question..." />
+      <div class="btn-row">
+        <button onclick="solve()">Solve</button>
+        <button onclick="startVoice()">🎤 Speak</button>
+        <button onclick="clearInput()">Clear</button>
+      </div>
+      <div id="result"></div>
+    </section>
+
+    <!-- Full Calculator Buttons -->
+    <section id="calculator-buttons">
+      <div class="calc-buttons">
+        <button onclick="append('7')">7</button>
+        <button onclick="append('8')">8</button>
+        <button onclick="append('9')">9</button>
+        <button onclick="append('/')">÷</button>
+
+        <button onclick="append('4')">4</button>
+        <button onclick="append('5')">5</button>
+        <button onclick="append('6')">6</button>
+        <button onclick="append('*')">×</button>
+
+        <button onclick="append('1')">1</button>
+        <button onclick="append('2')">2</button>
+        <button onclick="append('3')">3</button>
+        <button onclick="append('-')">−</button>
+
+        <button onclick="append('0')">0</button>
+        <button onclick="append('.')">.</button>
+        <button onclick="append('+')">+</button>
+        <button onclick="solve()">=</button>
+      </div>
+    </section>
+
+    <!-- Unit Converter -->
+    <section id="unit-converter">
+      <h2>Unit Converter</h2>
+      <select id="convert-type">
+        <option value="kg-lb">kg ⇄ lbs</option>
+        <option value="m-ft">meters ⇄ feet</option>
+        <option value="c-f">°C ⇄ °F</option>
+      </select>
+      <input type="number" id="convert-input" placeholder="Enter value" />
+      <button onclick="convertUnits()">Convert</button>
+      <div id="convert-result"></div>
+    </section>
+
+    <!-- History Section -->
+    <section id="history">
+      <h3>History</h3>
+      <div id="history-list"></div>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
